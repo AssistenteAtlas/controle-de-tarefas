@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Controle de Tarefas</title>
+  <style>
+    body { font-family: Arial; padding: 20px; }
+    ul { list-style: none; padding: 0; }
+    li { margin: 5px 0; }
+    input, button { padding: 5px; }
+  </style>
+</head>
+<body>
+  <h1>Minhas Tarefas</h1>
+  <input type="text" id="novaTarefa" placeholder="Digite uma tarefa">
+  <button onclick="adicionarTarefa()">Adicionar</button>
+  <ul id="listaTarefas"></ul>
+
+  <script>
+    function adicionarTarefa() {
+      const input = document.getElementById('novaTarefa');
+      const lista = document.getElementById('listaTarefas');
+      const item = document.createElement('li');
+      item.textContent = input.value;
+      lista.appendChild(item);
+      input.value = '';
+    }
+  </script>
+</body>
+</html>
